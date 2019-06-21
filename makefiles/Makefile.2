@@ -1,0 +1,15 @@
+#main.o:main.c calc.c
+#	gcc -o main main.c calc.c
+#obj files would be main.o calc.o
+all:unix
+unix:msys
+
+msys:calc.o main.o
+	gcc -o msys calc.o main.o
+calc.o:calc.c
+	gcc -c calc.c
+main.o:main.c
+	gcc -c main.c
+
+clean:
+	rm -f calc.o main.o msys
